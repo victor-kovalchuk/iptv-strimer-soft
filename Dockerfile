@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM alpine
 
 RUN apt-get update
 RUN apt-get install -y libssl-dev libdvbcsa1
