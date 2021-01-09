@@ -1,6 +1,6 @@
 #!./astra
 
-require("base")
+require("/etc/astra/base")
 
 local sat_type = "S2"
 local sat_name = "telekarta"
