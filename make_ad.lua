@@ -1,8 +1,17 @@
 #!/usr/local/bin/lua
+local base_lua = io.open('base.lua','r')
+if not base_lua then
+	print ('Error: <base.lua> not found')
+	do return end
+end
 if not arg[1] then
 	print ('Usage: '..arg[0]..' <input filename>.')
 	do return end
 end
+repeat
+	local base_line = base_lua:read('*l')
+	print (base_line or '')
+until not base_line
 local conf = io.open(arg[1],'r')
 if not conf then
 	print ('Error: conf file <'..arg[1]..'> not found.')
@@ -24,26 +33,25 @@ while f_line do
 	local pos2 = f_line:find('\t',pos1+1)
 	local pos3 = f_line:find('\t',pos2+1)
 	local pos4 = f_line:find('\t',pos3+1)
-	ch_list[index] = {}
-	ch_list[index].name = f_line:sub(1,pos)
-	ch_list[index].pnr = f_line:sub(pos+1,pos1-1)
-	ch_list[index].subscription = f_line:sub(pos1+1,pos2-1)
-	ch_list[index].cam = f_line:sub(pos2+1,pos3-1)
-	if not cam[ch_list[index].cam] then
-		cam_index = cam_index+1
-		cam[cam_index] = ch_list[index].cam
-		cam[ch_list[index].cam] = ''
+	local cam_port = f_line:sub(pos2+1,pos3-1)
+	if cam_port ~= 'SKIP' then
+		ch_list[index] = {}
+		ch_list[index].name = f_line:sub(1,pos)
+		ch_list[index].pnr = f_line:sub(pos+1,pos1-1)
+		ch_list[index].subscription = f_line:sub(pos1+1,pos2-1)
+		ch_list[index].cam = cam_port
+		if not cam[ch_list[index].cam] then
+			cam_index = cam_index+1
+			cam[cam_index] = ch_list[index].cam
+			cam[ch_list[index].cam] = ''
+		end
+		ch_list[index].mcast = f_line:sub(pos3+1,pos4-1)
+		ch_list[index].port = f_line:sub(pos4+1,-1)
+		index = index+1
 	end
-	ch_list[index].mcast = f_line:sub(pos3+1,pos4-1)
-	ch_list[index].port = f_line:sub(pos4+1,-1)
 	f_line = conf:read('*l')
-	index = index+1
 end
 
-print ('#!./astra')
-print ('')
-print ('require("base")')
-print ('')
 print ('local sat_type = "'..tp_type..'"')
 print ('local sat_name = "telekarta"')
 print ('local tp = "'..tp_all..'"')
@@ -51,7 +59,7 @@ print ('local tp_fr = "'..tp_fr..'"')
 print ('local mac = "'..mac..'"')
 print ('local lnb = "10750:10750:10750"')
 print ('')
-
+print ('-- '..(index-1)..' channels:')
 print ('local channels = {')
 for i=1,index-1,1 do
 	local ch_var = '{name="'..ch_list[i].name..'",'..'input={"dvb://adapter_1#pnr='..ch_list[i].pnr..'&cam=reader_'..ch_list[i].cam
