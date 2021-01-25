@@ -125,15 +125,6 @@ t_tune.callback = function(data)
 
 adapter_1 = dvb_tune(t_tune)
 
-reader_0 = newcamd({
-	name = "Reader #0",
-	host = "172.17.166.18",
-	port = 6767,
-	user = "root",
-	pass = "root",
-	key = "0102030405060708091011121314",
-})
-
 _an = {}
 
 for q,item in pairs(channels)do
