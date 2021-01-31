@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ntv-11823
+  labels:
+    app: ntv-11823
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ntv-11823
+  template:
+    metadata:
+      labels:
+        app: ntv-11823
+    spec:
+      hostNetwork: true
+      containers:
+      - image: localhost:5000/strimer:v1
+        name: ntv-11823
+        tty: yes
+        env:
+        - name: "TP-PATH"
+          value: ntv-11823
+        securityContext:
+          privileged: true
+        volumeMounts:
+        - name: ntv-11823
+          mountPath: /etc/luaconf
+      volumes:
+      - name: ntv-11823
+        configMap:
+        # Provide the name of the ConfigMap containing the files you want
+        # to add to the container
+          name: ntv-11823
+
