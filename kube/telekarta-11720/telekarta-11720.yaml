@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: telekarta-11720
+  labels:
+    app: telekarta-11720
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: telekarta-11720
+  template:
+    metadata:
+      labels:
+        app: telekarta-11720
+    spec:
+      hostNetwork: true
+      containers:
+      - image: localhost:5000/strimer:v3
+        name: telekarta-11720
+        tty: yes
+        env:
+        - name: "TP-PATH"
+          value: telekarta-11720
+        securityContext:
+          privileged: true
+        volumeMounts:
+        - name: telekarta-11720
+          mountPath: /etc/luaconf
+      volumes:
+      - name: telekarta-11720
+        configMap:
+        # Provide the name of the ConfigMap containing the files you want
+        # to add to the container
+          name: telekarta-11720
+

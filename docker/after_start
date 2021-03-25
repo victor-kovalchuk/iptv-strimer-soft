@@ -1,0 +1,3 @@
+#!/bin/sh
+/etc/astra/astra-alpine /etc/astra/ad0.lua | /etc/astra/curl
+
