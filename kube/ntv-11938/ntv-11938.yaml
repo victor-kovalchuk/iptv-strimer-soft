@@ -6,6 +6,8 @@ metadata:
     app: ntv-11938
 spec:
   replicas: 1
+  strategy:
+    type: Recreate
   selector:
     matchLabels:
       app: ntv-11938
@@ -16,12 +18,14 @@ spec:
     spec:
       hostNetwork: true
       containers:
-      - image: localhost:5000/strimer:v3
+      - image: localhost:5000/strimer:v6
         name: ntv-11938
         tty: yes
         env:
         - name: "TP-PATH"
           value: ntv-11938
+        - name: "DB_ADDR"
+          value: "172.17.166.15"
         securityContext:
           privileged: true
         volumeMounts:

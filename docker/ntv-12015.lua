@@ -8,8 +8,6 @@ lnb = "10750:10750:10750"
 -- 6 channels:
 channels = {
 {name="NTV-HD",input={"dvb://adapter_1#pnr=2201&cam=reader_6770"},output={"udp://ens1f0@239.192.28.1:2121"},pnr="2201",udp_input={localaddr="172.17.168.11",addr="239.192.28.1",port="2121"}},
-{name="Konniy-Mir",input={"dvb://adapter_1#pnr=2203&cam=reader_10003"},output={"udp://ens1f0@239.192.28.3:2121"},pnr="2203",udp_input={localaddr="172.17.168.11",addr="239.192.28.3",port="2121"}},
-{name="Match!",input={"dvb://adapter_1#pnr=2204&cam=reader_10003"},output={"udp://ens1f0@239.192.28.4:2121"},pnr="2204",udp_input={localaddr="172.17.168.11",addr="239.192.28.4",port="2121"}},
 {name="Dom-Kino-Premium-HD",input={"dvb://adapter_1#pnr=2205&cam=reader_6768"},output={"udp://ens1f0@239.192.28.5:2121"},pnr="2205",udp_input={localaddr="172.17.168.11",addr="239.192.28.5",port="2121"}},
 {name="TNT-HD",input={"dvb://adapter_1#pnr=2207&cam=reader_6770"},output={"udp://ens1f0@239.192.28.7:2121"},pnr="2207",udp_input={localaddr="172.17.168.11",addr="239.192.28.7",port="2121"}},
 {name="Rossiya-1-HD",input={"dvb://adapter_1#pnr=2208&cam=reader_10003"},output={"udp://ens1f0@239.192.28.8:2121"},pnr="2208",udp_input={localaddr="172.17.168.11",addr="239.192.28.8",port="2121"}},

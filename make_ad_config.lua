@@ -55,7 +55,7 @@ print ('channels = {')
 for i=1,index-1,1 do
 	local ch_var = '{name="'..ch_list[i].name..'",'..'input={"dvb://adapter_1#pnr='..ch_list[i].pnr..'&cam=reader_'..ch_list[i].cam
 	ch_var = ch_var .. '"},output={"udp://ens1f0@'..ch_list[i].mcast..':'..ch_list[i].port..'"},pnr="'..ch_list[i].pnr..'",'
-	ch_var = ch_var .. 'udp_input={localaddr="127.0.0.1",addr="'..ch_list[i].mcast..'",port="'..ch_list[i].port..'"}},'
+	ch_var = ch_var .. 'udp_input={localaddr="172.17.168.11",addr="'..ch_list[i].mcast..'",port="'..ch_list[i].port..'"}},'
 	print (ch_var)
 end
 print ('}')

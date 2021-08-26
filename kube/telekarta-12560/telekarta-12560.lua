@@ -5,7 +5,7 @@ tp_fr = "12560"
 mac = "00:22:AB:92:8F:FE"
 lnb = "9750:10600:11700"
 
--- 11 channels:
+-- 9 channels:
 channels = {
 {name="Da-Vinci",input={"dvb://adapter_1#pnr=1501&cam=reader_10011"},output={"udp://ens1f0@239.192.64.1:2121"},pnr="1501",udp_input={localaddr="127.0.0.1",addr="239.192.64.1",port="2121"}},
 {name="TV-1000-Russkoe-Kino",input={"dvb://adapter_1#pnr=1502&cam=reader_10011"},output={"udp://ens1f0@239.192.64.2:2121"},pnr="1502",udp_input={localaddr="127.0.0.1",addr="239.192.64.2",port="2121"}},
@@ -15,9 +15,7 @@ channels = {
 {name="Viasat-History",input={"dvb://adapter_1#pnr=1506&cam=reader_10011"},output={"udp://ens1f0@239.192.64.6:2121"},pnr="1506",udp_input={localaddr="127.0.0.1",addr="239.192.64.6",port="2121"}},
 {name="Viasat-Nature-East",input={"dvb://adapter_1#pnr=1507&cam=reader_10011"},output={"udp://ens1f0@239.192.64.7:2121"},pnr="1507",udp_input={localaddr="127.0.0.1",addr="239.192.64.7",port="2121"}},
 {name="Viasat-Sport-East",input={"dvb://adapter_1#pnr=1508&cam=reader_10011"},output={"udp://ens1f0@239.192.64.8:2121"},pnr="1508",udp_input={localaddr="127.0.0.1",addr="239.192.64.8",port="2121"}},
-{name="5-Kanal",input={"dvb://adapter_1#pnr=1510&cam=reader_10011"},output={"udp://ens1f0@239.192.64.9:2121"},pnr="1510",udp_input={localaddr="127.0.0.1",addr="239.192.64.9",port="2121"}},
 {name="Eurosport-1-Rossiya",input={"dvb://adapter_1#pnr=1511&cam=reader_10011"},output={"udp://ens1f0@239.192.64.10:2121"},pnr="1511",udp_input={localaddr="127.0.0.1",addr="239.192.64.10",port="2121"}},
-{name="Eurosport-2-Rossiya",input={"dvb://adapter_1#pnr=1512&cam=reader_10011"},output={"udp://ens1f0@239.192.64.11:2121"},pnr="1512",udp_input={localaddr="127.0.0.1",addr="239.192.64.11",port="2121"}},
 }
 
 reader_10011 = newcamd({

@@ -1,40 +1,36 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ntv-11785
+  name: telekarta-11920
   labels:
-    app: ntv-11785
+    app: telekarta-11920
 spec:
   replicas: 1
-  strategy:
-    type: Recreate
   selector:
     matchLabels:
-      app: ntv-11785
+      app: telekarta-11920
   template:
     metadata:
       labels:
-        app: ntv-11785
+        app: telekarta-11920
     spec:
       hostNetwork: true
       containers:
-      - image: localhost:5000/strimer:v6
-        name: ntv-11785
+      - image: localhost:5000/strimer:v1
+        name: telekarta-11920
         tty: yes
         env:
         - name: "TP-PATH"
-          value: ntv-11785
-        - name: "DB_ADDR"
-          value: "172.17.166.15"
+          value: telekarta-11920
         securityContext:
           privileged: true
         volumeMounts:
-        - name: ntv-11785
+        - name: telekarta-11920
           mountPath: /etc/luaconf
       volumes:
-      - name: ntv-11785
+      - name: telekarta-11920
         configMap:
         # Provide the name of the ConfigMap containing the files you want
         # to add to the container
-          name: ntv-11785
+          name: telekarta-11920
 
