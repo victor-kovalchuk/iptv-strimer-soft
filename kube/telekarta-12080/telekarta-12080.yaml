@@ -16,7 +16,7 @@ spec:
     spec:
       hostNetwork: true
       containers:
-      - image: localhost:5000/strimer:v3
+      - image: localhost:5000/strimer:v7
         name: telekarta-12080
         tty: yes
         env:

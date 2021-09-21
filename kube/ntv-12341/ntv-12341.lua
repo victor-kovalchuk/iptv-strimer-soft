@@ -15,7 +15,7 @@ channels = {
 {name="Mir-Seriala",input={"dvb://adapter_1#pnr=1107&cam=reader_10009"},output={"udp://ens1f0@239.192.40.7:2121"},pnr="1107",udp_input={localaddr="172.17.168.11",addr="239.192.40.7",port="2121"}},
 {name="TNV-Planeta",input={"dvb://adapter_1#pnr=1108&cam=reader_10009"},output={"udp://ens1f0@239.192.40.8:2121"},pnr="1108",udp_input={localaddr="172.17.168.11",addr="239.192.40.8",port="2121"}},
 {name="Che!",input={"dvb://adapter_1#pnr=1109&cam=reader_10009"},output={"udp://ens1f0@239.192.40.9:2121"},pnr="1109",udp_input={localaddr="172.17.168.11",addr="239.192.40.9",port="2121"}},
-{name="Kino-TV-(Russia)",input={"dvb://adapter_1#pnr=1114&cam=reader_6776"},output={"udp://ens1f0@239.192.40.14:2121"},pnr="1114",udp_input={localaddr="172.17.168.11",addr="239.192.40.14",port="2121"}},
+{name="Kino-TV-(Russia)",input={"dvb://adapter_1#pnr=1114&cam=reader_10010"},output={"udp://ens1f0@239.192.40.14:2121"},pnr="1114",udp_input={localaddr="172.17.168.11",addr="239.192.40.14",port="2121"}},
 {name="Komediya",input={"dvb://adapter_1#pnr=1115&cam=reader_6776"},output={"udp://ens1f0@239.192.40.15:2121"},pnr="1115",udp_input={localaddr="172.17.168.11",addr="239.192.40.15",port="2121"}},
 {name="Shayan-TV",input={"dvb://adapter_1#pnr=1117&cam=reader_10010"},output={"udp://ens1f0@239.192.40.17:2121"},pnr="1117",udp_input={localaddr="172.17.168.11",addr="239.192.40.17",port="2121"}},
 {name="Mosfilm",input={"dvb://adapter_1#pnr=1118&cam=reader_10010"},output={"udp://ens1f0@239.192.40.18:2121"},pnr="1118",udp_input={localaddr="172.17.168.11",addr="239.192.40.18",port="2121"}},

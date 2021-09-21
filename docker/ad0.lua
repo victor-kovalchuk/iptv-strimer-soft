@@ -894,6 +894,7 @@ t_tune.type = sat_type
 t_tune.mac = mac
 t_tune.lnb = lnb
 t_tune.tp = tp
+local _t = 0
 t_tune.callback = function(data)
 --[[
                 local sat_param = '{"sat_param":{"sat_name":"'..sat_name..'","tp_fr":'..tp_fr..','
@@ -911,20 +912,24 @@ t_tune.callback = function(data)
 		sat_param = sat_param..'"signal":'..(signal or -1)..'}}'
 		send_monitor(sat_param)
 ]]
-		local sat_param = sat_name..':sat_param,tp_fr='..tp_fr..' '
-		sat_param = sat_param..'ber='..(data.ber or -1)..','
-		sat_param = sat_param..'unc='..(data.unc or -1)..','
-		local snr = data.snr
-		if snr then
-			snr = math.floor(snr/655)
+		_t = _t+1
+		if _t >= 15 then
+			_t = 0
+			local sat_param = sat_name..':sat_param,tp_fr='..tp_fr..' '
+			sat_param = sat_param..'ber='..(data.ber or -1)..','
+			sat_param = sat_param..'unc='..(data.unc or -1)..','
+			local snr = data.snr
+			if snr then
+				snr = math.floor(snr/655)
+			end
+			sat_param = sat_param..'snr='..(snr or -1)..','
+			local signal = data.signal
+			if signal then
+				signal = math.floor(signal/655)
+			end
+			sat_param = sat_param..'signal='..(signal or -1)
+			print(sat_param)
 		end
-		sat_param = sat_param..'snr='..(snr or -1)..','
-		local signal = data.signal
-		if signal then
-			signal = math.floor(signal/655)
-		end
-		sat_param = sat_param..'signal='..(signal or -1)
-		print(sat_param)
 	end
 
 adapter_1 = dvb_tune(t_tune)
@@ -933,18 +938,21 @@ _an = {}
 
 for q,item in pairs(channels)do
   make_channel(item)
-  _an[q] = {i = {}, a = {}}
+  _an[q] = {i = {}, a = {}, t = 0}
   _an[q].i = udp_input(item.udp_input)
   _an[q].a = analyze({
         upstream = _an[q].i:stream(),
         name = "_" .. item.name,
         callback = function(data)
-                local a_array = {}
-                if data.total then
-                        for k,v in pairs (data.total) do
-                                a_array[k] = v
-                        end
-                end
+		_an[q].t = _an[q].t+1
+		if _an[q].t >= 15 then
+			_an[q].t = 0
+	                local a_array = {}
+        	        if data.total then
+                	        for k,v in pairs (data.total) do
+                        	        a_array[k] = v
+                        	end
+                	end
 --[[
 		local udp_param = '{"udp_param":{"sat_name":"'..sat_name..'","tp_fr":'..tp_fr..',"pnr":'..item.pnr..',"pr_name":"'..item.name..'",'
 		udp_param = udp_param..'"scrambled":'..(a_array.scrambled and '1' or '0')..','
@@ -953,12 +961,13 @@ for q,item in pairs(channels)do
 		udp_param = udp_param..'"cc_errors":'..(a_array.cc_errors or '0')..'}}'
 		send_monitor(udp_param)
 ]]
-		local udp_param = sat_name..':udp_param,tp_fr='..tp_fr..',pnr='..item.pnr..',pr_name='..item.name..' '
-		udp_param = udp_param..'scrambled='..(a_array.scrambled and '1' or '0')..','
-		udp_param = udp_param..'bitrate='..(a_array.bitrate or '0')..','
-		udp_param = udp_param..'pes_errors='..(a_array.pes_errors or '0')..','
-		udp_param = udp_param..'cc_errors='..(a_array.cc_errors or '0')
-		print(udp_param)
+			local udp_param = sat_name..':udp_param,tp_fr='..tp_fr..',pnr='..item.pnr..',pr_name='..item.name..' '
+			udp_param = udp_param..'scrambled='..(a_array.scrambled and '1' or '0')..','
+			udp_param = udp_param..'bitrate='..(a_array.bitrate or '0')..','
+			udp_param = udp_param..'pes_errors='..(a_array.pes_errors or '0')..','
+			udp_param = udp_param..'cc_errors='..(a_array.cc_errors or '0')
+			print(udp_param)
+		end
 	end
   })
 end

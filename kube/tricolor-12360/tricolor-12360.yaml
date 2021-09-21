@@ -16,7 +16,7 @@ spec:
     spec:
       hostNetwork: true
       containers:
-      - image: localhost:5000/strimer:v5
+      - image: localhost:5000/strimer:v7
         name: tricolor-12360
         tty: yes
         env:
