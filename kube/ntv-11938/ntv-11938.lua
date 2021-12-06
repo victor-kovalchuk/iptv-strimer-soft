@@ -7,7 +7,7 @@ lnb = "10750:10750:10750"
 
 -- 7 channels:
 channels = {
-{name="Fox-Russia-HD",input={"dvb://adapter_1#pnr=17101&cam=reader_6768"},output={"udp://ens1f0@239.192.24.1:2121"},pnr="17101",udp_input={localaddr="172.17.168.11",addr="239.192.24.1",port="2121"}},
+{name="Fox-Russia-HD",input={"dvb://adapter_1#pnr=17101&cam=reader_6776&set_pnr=1211"},output={"udp://ens1f0@239.192.24.1:2121"},pnr="17101",udp_input={localaddr="172.17.168.11",addr="239.192.24.1",port="2121"}},
 {name="VIP-Comedy-HD",input={"dvb://adapter_1#pnr=17102&cam=reader_6770"},output={"udp://ens1f0@239.192.24.2:2121"},pnr="17102",udp_input={localaddr="172.17.168.11",addr="239.192.24.2",port="2121"}},
 {name="VIP-Megahit-HD",input={"dvb://adapter_1#pnr=17103&cam=reader_6770"},output={"udp://ens1f0@239.192.24.3:2121"},pnr="17103",udp_input={localaddr="172.17.168.11",addr="239.192.24.3",port="2121"}},
 {name="VIP-Premiere-HD",input={"dvb://adapter_1#pnr=17104&cam=reader_6770"},output={"udp://ens1f0@239.192.24.4:2121"},pnr="17104",udp_input={localaddr="172.17.168.11",addr="239.192.24.4",port="2121"}},
@@ -16,10 +16,10 @@ channels = {
 {name="Hollywood-HD",input={"dvb://adapter_1#pnr=17108&cam=reader_6767"},output={"udp://ens1f0@239.192.24.8:2121"},pnr="17108",udp_input={localaddr="172.17.168.11",addr="239.192.24.8",port="2121"}},
 }
 
-reader_6768 = newcamd({
- name = "Reader #6768",
+reader_6776 = newcamd({
+ name = "Reader #6776",
  host = "172.17.166.18",
- port = 6768,
+ port = 6776,
  user = "root",
  pass = "root",
  key = "0102030405060708091011121314",
@@ -49,7 +49,7 @@ return {
  mac=mac,
  lnb=lnb,
  channels=channels,
- reader_6768=reader_6768,
+ reader_6776=reader_6776,
  reader_6770=reader_6770,
  reader_6767=reader_6767,
 }

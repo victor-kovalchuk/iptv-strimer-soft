@@ -12,7 +12,7 @@ channels = {
 {name="5-Kanal",input={"dvb://adapter_1#pnr=1003&cam=reader_6773"},output={"udp://ens1f0@239.192.34.3:2121"},pnr="1003",udp_input={localaddr="172.17.168.11",addr="239.192.34.3",port="2121"}},
 {name="REN-TV",input={"dvb://adapter_1#pnr=1004&cam=reader_6773"},output={"udp://ens1f0@239.192.34.4:2121"},pnr="1004",udp_input={localaddr="172.17.168.11",addr="239.192.34.4",port="2121"}},
 {name="Rossiya-K",input={"dvb://adapter_1#pnr=1005&cam=reader_6774"},output={"udp://ens1f0@239.192.34.5:2121"},pnr="1005",udp_input={localaddr="172.17.168.11",addr="239.192.34.5",port="2121"}},
-{name="Rossiya-24",input={"dvb://adapter_1#pnr=1006&cam=reader_6774"},output={"udp://ens1f0@239.192.34.6:2121"},pnr="1006",udp_input={localaddr="172.17.168.11",addr="239.192.34.6",port="2121"}},
+{name="Rossiya-24",input={"dvb://adapter_1#pnr=1006&cam=reader_6774"},output={"udp://ens1f0@239.192.34.6:2121#no_sdt"},pnr="1006",udp_input={localaddr="172.17.168.11",addr="239.192.34.6",port="2121"}},
 {name="Telekanal-Spas",input={"dvb://adapter_1#pnr=1007&cam=reader_6775"},output={"udp://ens1f0@239.192.34.7:2121"},pnr="1007",udp_input={localaddr="172.17.168.11",addr="239.192.34.7",port="2121"}},
 {name="TV-3",input={"dvb://adapter_1#pnr=1008&cam=reader_6775"},output={"udp://ens1f0@239.192.34.8:2121"},pnr="1008",udp_input={localaddr="172.17.168.11",addr="239.192.34.8",port="2121"}},
 {name="Pyatnitsa!",input={"dvb://adapter_1#pnr=1009&cam=reader_10004"},output={"udp://ens1f0@239.192.34.9:2121"},pnr="1009",udp_input={localaddr="172.17.168.11",addr="239.192.34.9",port="2121"}},
