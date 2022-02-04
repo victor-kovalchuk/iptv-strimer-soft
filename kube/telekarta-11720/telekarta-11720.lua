@@ -2,12 +2,12 @@ sat_type = "S"
 sat_name = "telekarta"
 tp = "11720:H:28800"
 tp_fr = "11720"
-mac = "00:22:AB:92:8F:F9"
+mac = "00:22:AB:92:8F:FA"
 lnb = "9750:10600:11700"
 
 -- 16 channels:
 channels = {
-{name="Kanal-Disney",input={"dvb://adapter_1#pnr=701&cam=reader_10011"},output={"udp://ens1f0@239.192.68.1:2121"},pnr="701",udp_input={localaddr="127.0.0.1",addr="239.192.68.1",port="2121"}},
+{name="Kanal-Disney",input={"dvb://adapter_1#pnr=701&cam=reader_10011&set_pnr=409"},output={"udp://ens1f0@239.192.68.1:2121"},pnr="701",udp_input={localaddr="127.0.0.1",addr="239.192.68.1",port="2121"}},
 {name="Soyuz",input={"dvb://adapter_1#pnr=702&cam=reader_10011"},output={"udp://ens1f0@239.192.68.2:2121"},pnr="702",udp_input={localaddr="127.0.0.1",addr="239.192.68.2",port="2121"}},
 {name="Juvelirochka",input={"dvb://adapter_1#pnr=703&cam=reader_10011"},output={"udp://ens1f0@239.192.68.3:2121"},pnr="703",udp_input={localaddr="127.0.0.1",addr="239.192.68.3",port="2121"}},
 {name="8-Kanal",input={"dvb://adapter_1#pnr=705&cam=reader_10011"},output={"udp://ens1f0@239.192.68.4:2121"},pnr="705",udp_input={localaddr="127.0.0.1",addr="239.192.68.4",port="2121"}},

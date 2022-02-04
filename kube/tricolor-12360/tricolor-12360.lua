@@ -7,10 +7,7 @@ lnb = "10750:10750:10750"
 
 -- 4 channels:
 channels = {
-{name="Insight-UHD-4K",input={"dvb://adapter_1#pnr=34000&cam"},output={"udp://ens1f0@239.192.128.1:2121"},pnr="34000",udp_input={localaddr="172.17.168.11",addr="239.192.128.1",port="2121"}},
-{name="Kino-UHD-4K",input={"dvb://adapter_1#pnr=34001"},output={"udp://ens1f0@239.192.128.2:2121"},pnr="34001",udp_input={localaddr="172.17.168.11",addr="239.192.128.2",port="2121"}},
-{name="Love-Nature-4K",input={"dvb://adapter_1#pnr=34003"},output={"udp://ens1f0@239.192.128.3:2121"},pnr="34003",udp_input={localaddr="172.17.168.11",addr="239.192.128.3",port="2121"}},
-{name="Insight-HD",input={"dvb://adapter_1#pnr=34004"},output={"udp://ens1f0@239.192.128.4:2121"},pnr="34004",udp_input={localaddr="172.17.168.11",addr="239.192.128.4",port="2121"}},
+{name="Kino UHD",input={"dvb://adapter_1#pnr=34001&cas"},output={"udp://ens1f0@239.192.128.1:2121"},pnr="34001",udp_input={localaddr="172.17.168.11",addr="239.192.128.1",port="2121"}},
 }
 
 return {

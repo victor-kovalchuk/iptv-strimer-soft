@@ -7,12 +7,11 @@ lnb = "10750:10750:10750"
 
 -- 6 channels:
 channels = {
-{name="Kinopremyera-HD",input={"dvb://adapter_1#pnr=12101&cam=reader_6771"},output={"udp://ens1f0@239.192.42.1:2121"},pnr="12101",udp_input={localaddr="172.17.168.11",addr="239.192.42.1",port="2121"}},
-{name="Match!-Igra-HD",input={"dvb://adapter_1#pnr=12102&cam=reader_10010"},output={"udp://ens1f0@239.192.42.2:2121"},pnr="12102",udp_input={localaddr="172.17.168.11",addr="239.192.42.2",port="2121"}},
-{name="HDL",input={"dvb://adapter_1#pnr=12103&cam=reader_10010"},output={"udp://ens1f0@239.192.42.3:2121"},pnr="12103",udp_input={localaddr="172.17.168.11",addr="239.192.42.3",port="2121"}},
-{name="Match!-Arena-HD",input={"dvb://adapter_1#pnr=12104&cam=reader_10010"},output={"udp://ens1f0@239.192.42.4:2121"},pnr="12104",udp_input={localaddr="172.17.168.11",addr="239.192.42.4",port="2121"}},
-{name="KHL-TV-HD",input={"dvb://adapter_1#pnr=12106&cam=reader_10010"},output={"udp://ens1f0@239.192.42.6:2121"},pnr="12106",udp_input={localaddr="172.17.168.11",addr="239.192.42.6",port="2121"}},
-{name="Sony-Channel-Russia",input={"dvb://adapter_1#pnr=12107&cam=reader_6776"},output={"udp://ens1f0@239.192.42.7:2121"},pnr="12107",udp_input={localaddr="172.17.168.11",addr="239.192.42.7",port="2121"}},
+{name="Kinopremyera-HD",input={"dvb://adapter_1#pnr=12101&set_pnr=10070&cam=reader_6771"},output={"udp://ens1f0@239.192.42.1:2121"},map="video=33,audio=321",pnr="12101",udp_input={localaddr="172.17.168.11",addr="239.192.42.1",port="2121"}},
+{name="Match!-Igra-HD",input={"dvb://adapter_1#pnr=12102&set_pnr=10120&cam=reader_10010"},output={"udp://ens1f0@239.192.42.2:2121"},map="video=322,audio=422",pnr="12102",udp_input={localaddr="172.17.168.11",addr="239.192.42.2",port="2121"}},
+{name="HDL",input={"dvb://adapter_1#pnr=12103&set_pnr=2501&cam=reader_10010"},output={"udp://ens1f0@239.192.42.3:2121"},map="video=323,audio=403",pnr="12103",udp_input={localaddr="172.17.168.11",addr="239.192.42.3",port="2121"}},
+{name="Match!-Arena-HD",input={"dvb://adapter_1#pnr=12104&set_pnr=10760&cam=reader_10010"},output={"udp://ens1f0@239.192.42.4:2121"},map="video=1076,audio=1805",pnr="12104",udp_input={localaddr="172.17.168.11",addr="239.192.42.4",port="2121"}},
+{name="KHL-TV-HD",input={"dvb://adapter_1#pnr=12106&set_pnr=12090&cam=reader_10010"},output={"udp://ens1f0@239.192.42.6:2121"},map="video=1209,audio=1809",pnr="12106",udp_input={localaddr="172.17.168.11",addr="239.192.42.6",port="2121"}},
 }
 
 reader_6771 = newcamd({

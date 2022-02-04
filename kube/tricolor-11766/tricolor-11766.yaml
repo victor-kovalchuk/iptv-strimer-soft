@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tricolor-11766
+  labels:
+    app: tricolor-11766
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tricolor-11766
+  template:
+    metadata:
+      labels:
+        app: tricolor-11766
+    spec:
+      hostNetwork: true
+      containers:
+      - image: localhost:5000/strimer:v7
+        name: tricolor-11766
+        tty: yes
+        env:
+        - name: "TP-PATH"
+          value: tricolor-11766
+        - name: "DB_ADDR"
+          value: "172.17.166.15"
+        securityContext:
+          privileged: true
+        volumeMounts:
+        - name: tricolor-11766
+          mountPath: /etc/luaconf
+      volumes:
+      - name: tricolor-11766
+        configMap:
+        # Provide the name of the ConfigMap containing the files you want
+        # to add to the container
+          name: tricolor-11766
+

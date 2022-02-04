@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: t2-538
+  labels:
+    app: t2-538
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: t2-538
+  template:
+    metadata:
+      labels:
+        app: t2-538
+    spec:
+      hostNetwork: true
+      containers:
+      - image: localhost:5000/dvblast:v1
+        name: t2-538
+        tty: yes
+        env:
+        - name: "ADAPTER"
+          value: "33"
+        - name: "FREQUENCY"
+          value: "538000000"
+        securityContext:
+          privileged: true
+        volumeMounts:
+        - name: t2-538
+          mountPath: /etc/dvb/
+      volumes:
+      - name: t2-538
+        configMap:
+        # Provide the name of the ConfigMap containing the files you want
+        # to add to the container
+          name: t2-538
+
