@@ -7,8 +7,8 @@ lnb = "10750:10750:10750"
 
 -- 4 channels:
 channels = {
-{name="Premialnoe",input={"dvb://adapter_1#pnr=17001&cas"},output={"udp://ens1f0@239.192.132.1:2121"},pnr="17001",udp_input={localaddr="172.17.168.11",addr="239.192.132.1",port="2121"}},
-{name="Ostrosyuzhetnoye",input={"dvb://adapter_1#pnr=17002&cas"},output={"udp://ens1f0@239.192.132.2:2121"},pnr="17002",udp_input={localaddr="172.17.168.11",addr="239.192.132.2",port="2121"}},
+{name="Premialnoe",input={"dvb://adapter_1#pnr=17001&cas"},output={"udp://ens1f1@239.192.132.1:2121"},pnr="17001",udp_input={localaddr="172.17.169.11",addr="239.192.132.1",port="2121"}},
+{name="Ostrosyuzhetnoye",input={"dvb://adapter_1#pnr=17002&cas"},output={"udp://ens1f1@239.192.132.2:2121"},pnr="17002",udp_input={localaddr="172.17.169.11",addr="239.192.132.2",port="2121"}},
 }
 
 return {

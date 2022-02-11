@@ -7,7 +7,7 @@ lnb = "10750:10750:10750"
 
 -- 7 channels:
 channels = {
-{name="NTV-HD",input={"dvb://adapter_1#pnr=2201&set_pnr=12250&cam=reader_6770"},output={"udp://ens1f0@239.192.28.1:2121#sync"},map="video=201,audio=301",pnr="2201",udp_input={localaddr="172.17.168.11",addr="239.192.28.1",port="2121"}},
+{name="NTV-HD",input={"dvb://adapter_1#pnr=2201&set_pnr=12250&cam=reader_6770"},output={"udp://ens1f0@239.192.28.1:2121#sync"},pnr="2201",udp_input={localaddr="172.17.168.11",addr="239.192.28.1",port="2121"}},
 {name="Konniy-Mir",input={"dvb://adapter_1#pnr=2203&cam=reader_10003"},output={"udp://ens1f0@239.192.28.3:2121#sync"},pnr="2203",udp_input={localaddr="172.17.168.11",addr="239.192.28.3",port="2121"}},
 {name="Match!",input={"dvb://adapter_1#pnr=2204&cam=reader_10003"},output={"udp://ens1f0@239.192.28.4:2121#sync"},pnr="2204",udp_input={localaddr="172.17.168.11",addr="239.192.28.4",port="2121"}},
 {name="Dom-Kino-Premium-HD",input={"dvb://adapter_1#pnr=2205&set_pnr=12150&cam=reader_6768"},output={"udp://ens1f0@239.192.28.5:2121#sync"},map="video=205,audio=305",pnr="2205",udp_input={localaddr="172.17.168.11",addr="239.192.28.5",port="2121"}},

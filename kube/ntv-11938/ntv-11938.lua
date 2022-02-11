@@ -14,7 +14,7 @@ channels = {
 {name="Viasat-Nature/History-HD",input={"dvb://adapter_1#pnr=17105&set_pnr=10930&cam=reader_6770"},output={"udp://ens1f0@239.192.24.5:2121#sync"},map="video=305,audio=405",pnr="17105",udp_input={localaddr="172.17.168.11",addr="239.192.24.5",port="2121"}},
 {name="Mezzo-Live-HD",input={"dvb://adapter_1#pnr=17106&cam=reader_6773"},output={"udp://ens1f0@239.192.24.6:2121#sync"},pnr="17106",udp_input={localaddr="172.17.168.11",addr="239.192.24.6",port="2121"}},
 {name="Eurosport-2-Rossiya-HD",input={"dvb://adapter_1#pnr=17107&cam=reader_6767"},output={"udp://ens1f0@239.192.24.7:2121#sync"},pnr="17107",udp_input={localaddr="172.17.168.11",addr="239.192.24.7",port="2121"}},
-{name="Hollywood-HD",input={"dvb://adapter_1#pnr=17108&set_pnr=7002&cam=reader_6767"},output={"udp://ens1f0@239.192.24.8:2121#sync"},map="video=7002,audio=8002",pnr="17108",udp_input={localaddr="172.17.168.11",addr="239.192.24.8",port="2121"}},
+{name="Hollywood-HD",input={"dvb://adapter_1#pnr=17108&set_pnr=7002&cam=reader_6767"},output={"udp://ens1f0@239.192.24.8:2121#sync"},pnr="17108",udp_input={localaddr="172.17.168.11",addr="239.192.24.8",port="2121"}},
 }
 
 reader_6776 = newcamd({
@@ -24,6 +24,7 @@ reader_6776 = newcamd({
  user = "root",
  pass = "root",
  key = "0102030405060708091011121314",
+ disable_emm = true,
 })
 reader_6770 = newcamd({
  name = "Reader #6770",
@@ -48,6 +49,7 @@ reader_6767 = newcamd({
  user = "root",
  pass = "root",
  key = "0102030405060708091011121314",
+ ignore_cw = true,
 })
 
 return {
